@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Search Messages</h2>
+    <form action="{{ url_for('messages') }}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Search</button>
+    </form>
+{% endblock %}
