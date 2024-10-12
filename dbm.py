@@ -4,7 +4,6 @@ from os import getenv
 from dotenv import load_dotenv
 load_dotenv()
 
-
 class DB:
     def __init__(self):  
         try:
@@ -34,6 +33,8 @@ class DB:
         except Exception as e:
             raise Exception("Error fetching messages: ", e)
 
+    def fetch_last_ten_messages(self):  
+        return self.fetch_messages(10)
+
     def close(self):  
         self.client.close()
-

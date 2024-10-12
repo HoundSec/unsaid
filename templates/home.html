@@ -9,4 +9,15 @@
         <input type="text" id="name" name="name" required>
         <button type="submit">Search</button>
     </form>
+
+    <h2>Last 10 Messages</h2>
+    <div class="messages-container">
+        {% for message in last_ten_messages %}
+            <div class="message-card">
+                <strong>{{ message.name }}</strong>
+                <p>{{ message.message }}</p>
+                <small>{{ message.timestamp }}</small>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
